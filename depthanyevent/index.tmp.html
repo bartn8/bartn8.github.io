@@ -1,0 +1,762 @@
+<html>
+	<head>
+
+	<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+	
+	
+	<style type="text/css">
+		body {
+			font-family: 'Noto Sans', sans-serif;
+			color: #4a4a4a;
+			font-size: 1em;
+			font-weight: 400;
+			line-height: 1.5;
+			margin-left: auto;
+			margin-right: auto;
+			width: 1100px;
+		}
+	
+		.title {
+			color: #363636;
+			font-size: 4rem;
+			line-height: 1.125;
+			font-weight: 200;
+			font-family: 'Google Sans', sans-serif;
+		}
+	
+		.publication-title {
+			font-family: 'Google Sans', sans-serif;
+		}
+	
+		h1 {
+			font-size: 40px;
+			font-weight: 500;
+		}
+	
+		h2 {
+			font-size: 35px;
+			font-weight: 300;
+		}
+	
+		h3 {
+			font-size: 1px;
+			font-weight: 300;
+		}
+	
+		.subtitle,
+		.title {
+			word-break: break-word;
+		}
+	
+		.title.is-2 {
+			font-size: 4rem;
+			font-weight: 400;
+		}
+	
+		.title.is-3 {
+			font-size: 2.5rem;
+			font-weight: 400;
+		}
+	
+		.content h2 {
+			font-weight: 600;
+			font-family: 'Noto Sans', sans-serif;
+			line-height: 1.125;
+		}
+	
+		.disclaimerbox {
+			background-color: #eee;
+			border: 1px solid #eeeeee;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			padding: 20px;
+		}
+	
+		video.header-vid {
+			height: 140px;
+			border: 1px solid rgba(0, 0, 0, 0.212);
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+	
+		img.header-img {
+			height: 140px;
+			border: 1px solid black;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+	
+		img.rounded {
+			border: 1px solid #eeeeee;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+	
+		a:link,
+		a:visited {
+			color: #2994c5;
+			text-decoration: none;
+		}
+	
+		a:hover {
+			color: #0e889e;
+		}
+	
+		td.dl-link {
+			height: 160px;
+			text-align: center;
+			font-size: 22px;
+		}
+	
+		.layered-paper-big {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The top layer shadow */
+				5px 5px 0 0px #fff,
+				/* The second layer */
+				5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The second layer shadow */
+				10px 10px 0 0px #fff,
+				/* The third layer */
+				10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The third layer shadow */
+				15px 15px 0 0px #fff,
+				/* The fourth layer */
+				15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The fourth layer shadow */
+				20px 20px 0 0px #fff,
+				/* The fifth layer */
+				20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The fifth layer shadow */
+				25px 25px 0 0px #fff,
+				/* The fifth layer */
+				25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The fifth layer shadow */
+			margin-left: 10px;
+			margin-right: 45px;
+		}
+	
+		.paper-big {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The top layer shadow */
+	
+			margin-left: 10px;
+			margin-right: 45px;
+		}
+	
+		.button.is-dark {
+			background-color: #363636;
+			border-color: transparent;
+			color: #fff;
+		}
+	
+		.button.is-rounded {
+			border-radius: 290486px;
+			padding-left: calc(1em + .25em);
+			padding-right: calc(1em + .25em);
+		}
+	
+		.button.is-normal {
+			font-size: 1rem;
+		}
+	
+		.button .icon,
+		.button .icon.is-large,
+		.button .icon.is-medium,
+		.button .icon.is-small {
+			height: 1.5em;
+			width: 1.5em;
+		}
+	
+		.icon {
+			align-items: center;
+			display: inline-flex;
+			justify-content: center;
+			height: 1.5rem;
+			width: 1.5rem;
+		}
+	
+		.button.is-normal {
+			font-size: 1rem;
+		}
+	
+		.button {
+			background-color: #fff;
+			border-color: #dbdbdb;
+			border-width: 1px;
+			color: #363636;
+			cursor: pointer;
+			justify-content: center;
+			padding-bottom: calc(.5em - 1px);
+			padding-left: 1em;
+			padding-right: 1em;
+			padding-top: calc(.5em - 1px);
+			text-align: center;
+			white-space: nowrap;
+		}
+	
+		.button .icon:first-child:not(:last-child) {
+			margin-left: calc(-.5em - 1px);
+			margin-right: .25em;
+		}
+		
+		.button.is-rounded {
+			border-radius: 290486px;
+			padding-left: calc(1em + .25em);
+			padding-right: calc(1em + .25em);
+		}
+	
+		.button.is-normal {
+			font-size: 1rem;
+		}
+	
+		.button.is-dark {
+			background-color: #363636;
+			border-color: transparent;
+			color: #fff;
+		}
+	
+		.link-block a {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	
+		.button {
+			background-color: #fff;
+			border-color: #dbdbdb;
+			border-width: 1px;
+			color: #363636;
+			cursor: pointer;
+			justify-content: center;
+			padding-bottom: calc(.5em - 1px);
+			padding-left: 1em;
+			padding-right: 1em;
+			padding-top: calc(.5em - 1px);
+			text-align: center;
+			white-space: nowrap;
+		}
+	
+		.button,
+		.file-cta,
+		.file-name,
+		.input,
+		.pagination-ellipsis,
+		.pagination-link,
+		.pagination-next,
+		.pagination-previous,
+		.select select,
+		.textarea {
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			align-items: center;
+			border: 1px solid transparent;
+			border-top-color: transparent;
+			border-top-width: 1px;
+			border-right-color: transparent;
+			border-right-width: 1px;
+			border-bottom-color: transparent;
+			border-bottom-width: 1px;
+			border-left-color: transparent;
+			border-left-width: 1px;
+			border-radius: 4px;
+			box-shadow: none;
+			display: inline-flex;
+			font-size: 1rem;
+			height: 2.5em;
+			justify-content: flex-start;
+			line-height: 1.5;
+			padding-bottom: calc(.5em - 1px);
+			padding-left: calc(.75em - 1px);
+			padding-right: calc(.75em - 1px);
+			padding-top: calc(.5em - 1px);
+			position: relative;
+			vertical-align: top;
+		}
+	
+		.breadcrumb,
+		.button,
+		.delete,
+		.file,
+		.is-unselectable,
+		.modal-close,
+		.pagination-ellipsis,
+		.pagination-link,
+		.pagination-next,
+		.pagination-previous,
+		.tabs {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+	
+		a {
+			color: #3273dc;
+			cursor: pointer;
+			text-decoration: none;
+		}
+	
+		a {
+			color: #007bff;
+			text-decoration: none;
+			background-color: transparent;
+		}
+	
+		*,
+		::after,
+		::before {
+			box-sizing: inherit;
+		}
+	
+		*,
+		::before,
+		::after {
+			box-sizing: border-box;
+		}
+	
+		span {
+			font-style: inherit;
+			font-weight: inherit;
+		}
+
+		span.disabled {
+			pointer-events: none;
+		}
+	
+		.layered-paper {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The top layer shadow */
+				5px 5px 0 0px #fff,
+				/* The second layer */
+				5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The second layer shadow */
+				10px 10px 0 0px #fff,
+				/* The third layer */
+				10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The third layer shadow */
+			margin-top: 5px;
+			margin-left: 10px;
+			margin-right: 30px;
+			margin-bottom: 5px;
+		}
+	
+		.vert-cent {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	
+		hr {
+			border: 0;
+			height: 1px;
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		}
+	</style>
+	
+	<title>Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation</title>
+	<meta property="og:image" content="./assets/teaser.png" />
+	<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation" />
+	<meta property="og:url" content="https://bartn8.github.io/depthanyevent">
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript"
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	<!-- <script type="text/javascript" id="MathJax-script" async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	</script> -->
+
+</head>
+
+<body>
+	<br>
+	<center>
+		<h1 class="title is-1 publication-title" style="margin-bottom: 0"><strong>Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation</strong></h1>
+		<br>
+		<h3 class="title is-3 publication-title" style="margin-top: 0; margin-bottom: 0">ICCV 2025</h3>
+		<br>
+		<table align=center width="1100px">
+			<table align=center width="1000px">
+				<tr>
+					<td align=center width="180px">
+						<center>
+							<span style="font-size:25px"><a href="https://bartn8.github.io/">Luca
+									Bartolomei</a></span>
+						</center>
+					</td>
+					<td align=center width="180px">
+						<center>
+							<span style="font-size:25px"><a href="https://github.com/Noce99">Enrico
+									Mannocci</a></span>
+						</center>
+					</td>					
+                    <td align=center width="150px">
+						<center>
+							<span style="font-size:25px"><a href="https://fabiotosi92.github.io/">Fabio
+									Tosi</a></span>
+						</center>
+					</td>                    
+					<td align=center width="150px">
+						<center>
+							<span style="font-size:25px"><a href="https://mattpoggi.github.io/">Matteo
+									Poggi</a></span>
+						</center>
+					</td>
+					<td align=center width="180px">
+						<center>
+							<span style="font-size:25px"><a
+									href="https://stefanomattoccia.github.io/">Stefano
+									Mattoccia</a></span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table align=center width="750px">
+				<table align=center width="750px">
+					<tr>
+						<td align=center width="200px">
+							<center>
+								<span style="font-size:22px">University of Bologna</span>
+							</center>
+						</td>
+					</tr>
+				</table>
+
+				<!-- PDF Link. -->
+				<span class="link-block disabled">
+					<a href="#" class="external-link button is-normal is-rounded is-dark"
+						style="background-color:#aaa;">
+						<span class="icon">
+							<svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false"
+								data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 384 512" data-fa-i2svg="">
+								<path fill="currentColor"
+									d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z">
+								</path>
+							</svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+						</span>
+						<span>Paper</span>
+					</a>
+				</span>
+
+				<!-- Poster Link. -->
+				<span class="link-block disabled">
+					<a href="#" class="external-link button is-normal is-rounded is-dark"
+						style="background-color:#aaa;">
+						<span class="icon">
+							<svg class="svg-inline--fa fa-palette fa-w-16" aria-hidden="true" focusable="false"
+								data-prefix="fas" data-icon="palette" role="img" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 512 512" data-fa-i2svg="">
+								<path fill="currentColor"
+									d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z">
+								</path>
+							</svg><!-- <i class="fas fa-palette"></i> Font Awesome fontawesome.com -->
+						</span>
+						<span>Poster</span>
+					</a>
+				</span>
+				<!-- Code Link. -->
+				<span class="link-block">
+					<a href="https://github.com/bartn8/depthanyevent" class="external-link button is-normal is-rounded is-dark"
+						style="background-color:#000000;">
+						<span class="icon">
+							<svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+								data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 496 512" data-fa-i2svg="">
+								<path fill="currentColor"
+									d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+								</path>
+							</svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+						</span>
+						<span>Code</span>
+					</a>
+				</span>
+			</table>
+	</center>
+	<br>
+	<center>
+		<table align=center width="1000px">
+			<tr>
+				<td>
+					<center>
+						<img class="round" width="1000px" src="./assets/teaser.png" />
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+			<tr>
+				<td>
+					<p style="text-align: justify;">
+						<strong>DepthAnyEvent-R in action.</strong> The first column shows the input frame (used only for distillation) and the corresponding event visualization. The other three columns present depth estimation results from different approaches: E2Depth, our DepthAnyEvent-R, and our DepthAnyEvent-R trained with our distillation approach. The top row shows the estimated depth maps while the bottom row depicts their corresponding RMSE visualizations.
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<br>
+	<br>
+	<hr>
+
+	<center>
+		<h1>Abstract</h1>
+	</center>
+
+	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+		<tr>
+			<td>
+				<p style="text-align: justify;">
+					<i>"Event cameras capture sparse, high-temporal-resolution visual information, making them particularly suitable for challenging environments with high-speed motion and strongly varying lighting conditions. However, the lack of large datasets with dense ground-truth depth annotations hinders learning-based monocular depth estimation from event data. To address this limitation, we propose a cross-modal distillation paradigm to generate dense proxy labels leveraging a Vision Foundation Model (VFM). 
+						Our strategy requires an event stream spatially aligned with RGB frames, a simple setup even available off-the-shelf, and exploits the robustness of large-scale VFMs.
+						Additionally, we propose to adapt VFMs, either a vanilla one like Depth Anything v2 (DAv2), or deriving from it a novel recurrent architecture to infer depth from monocular event cameras. 
+						We evaluate our approach with synthetic and real-world datasets, demonstrating that i) our cross-modal paradigm achieves competitive performance compared to fully supervised methods without requiring expensive depth annotations, and ii) our VFM-based models achieve state-of-the-art performance."</i>
+				</p>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<hr>
+
+	<center>
+		<h1>Method</h1>
+	</center>
+
+	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+		<tr>
+			<td>
+				<h2> 1 - Problems</h2>
+				<p style="text-align: justify;">
+					Depth perception from cameras is paramount for many application fields, such as those concerning the autonomous navigation of agents in complex scenarios or robotic tasks.
+					While monocular depth estimation using conventional cameras has made impressive progress, traditional image sensors suffer from inherent limitations:
+				</p>
+				<ul>
+					<li><p style="text-align: justify;"><strong>Motion blur:</strong> caused by the slow acquisition rate when capturing fast-moving scenes.</p></li>
+					<li><p style="text-align: justify;"><strong>Low HDR:</strong> standard cameras struggle in environments with extreme lighting variations, leading to over- or under-exposed images.</p></li>
+					<li><p style="text-align: justify;"><strong>Discrete framerate:</strong> fixed temporal resolution may miss critical transitions between frames, especially during rapid motion.</p></li>
+				</ul>
+				<p style="text-align: justify;">
+					Event cameras offer a compelling alternative. These bio-inspired sensors asynchronously record brightness changes at the pixel level, yielding high temporal resolution and wide dynamic range. However, this advantage comes at a cost:
+				</p>
+				<ul>
+					<li><p style="text-align: justify;"><strong>Sparse data:</strong> events are triggered only at edges or areas with sufficient motion, making the representation incomplete and challenging for dense prediction tasks.</p></li>
+					<li><p style="text-align: justify;"><strong>Missing large datasets:</strong> collecting dense ground-truth depth for event data is expensive and technically demanding, limiting the availability of labeled datasets.</p></li>
+					<!--<li><p style="text-align: justify;"><strong>Modality gap:</strong> event streams are fundamentally different from standard images, making it difficult to transfer existing methods trained on conventional data.</p></li>-->
+				</ul>
+				<p style="text-align: justify;">As a result, learning accurate, dense, and robust monocular depth from event data remains a significant challenge—especially in the absence of large-scale annotated datasets.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2> 2 - Proposal</h2>
+				<p style="text-align: justify;">
+					To overcome the limitations of event-based monocular depth estimation, we propose a novel cross-modal learning paradigm that leverages the power of <strong>Vision Foundation Models (VFMs)</strong> trained on standard RGB images. Our goal is to transfer their robust depth prediction capabilities to the event domain, where data is sparse and labeled supervision is limited.
+				</p>
+				<p style="text-align: justify;">
+					Our approach is based on two key ideas:
+				</p>
+				<ul>
+					<li>
+						<p style="text-align: justify;">
+							<strong>Cross-modal distillation:</strong> we extract dense proxy depth maps from aligned RGB images using a powerful pre-trained VFM (Depth Anything v2), and use them as supervision to train event-based depth models—<em>without requiring ground-truth depth labels</em>.
+						</p>
+					</li>
+					<li>
+						<p style="text-align: justify;">
+							<strong>VFM adaptation:</strong> we adapt frame-based depth models to work directly on event data, either using a lightweight vanilla architecture or a novel recurrent extension tailored to the sequential nature of events.
+						</p>
+					</li>
+				</ul>
+				<p style="text-align: justify;">
+					This proposal enables effective event-based monocular depth estimation with no expensive hand-crafted supervision. It bridges the modality gap between images and events, and unlocks the potential of large-scale vision models in scenarios where annotated data is scarce.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2> 3 - Method</h2>
+
+				<p style="text-align: justify;">
+					Our framework is designed to bridge the modality gap between conventional images and event streams for monocular depth estimation. As illustrated below, we propose a two-stage training strategy: (i) cross-modal distillation from RGB to events and (ii) model adaptation of Vision Foundation Models to operate directly on event data. In the first stage, we leverage a pre-trained Vision Foundation Model (VFM) to generate dense depth pseudo-labels from RGB frames. These labels supervise the training of a student network that learns to estimate depth from corresponding event stacks. This approach eliminates the need for expensive depth ground-truth annotations and enables effective supervision in the event domain.
+				</p>
+
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td><img src="assets/framework.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
+					</tr>
+				</table>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>Proposed Cross-Modal Distillation Strategy.</strong> 
+								During training, a VFM teacher processes RGB input frames $\mathbf{I}$ to generate proxy depth labels $\mathbf{D}^*$, which supervise an event-based student model. The student takes aligned event stacks $\mathbf{E}$ as input and predicts the final depth map $\mathbf{D}$.
+							</p>
+						</td>
+					</tr>
+				</table>
+
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td><img src="assets/proxylabels.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
+					</tr>
+				</table>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>Labels Distillation from Frame-Based Vision Foundation Model</strong> 
+								Given the availability of aligned color and event modalities, e.g., collected by a DAVIS346B sensor, we can exploit a VFM to extract proxy labels from the color images, resulting in much dense supervision compared to the one provided by semi-dense LiDAR annotations.
+							</p>
+						</td>
+					</tr>
+				</table>
+
+				<p style="text-align: justify;">
+					To effectively apply image-based models to events, we encode the sparse asynchronous event stream using the <em>Tencode</em> representation. This converts the temporal and polarity information of events into a 3-channel image that resembles RGB format, making it compatible with existing pre-trained VFMs. In the second part of our pipeline, we explore two adapted architectures: a <strong>vanilla model</strong> that directly fine-tunes Depth Anything v2 on event representations, and a <strong>recurrent variant</strong>—DepthAnyEvent-R—which incorporates temporal memory through ConvLSTM blocks. This recurrent design allows the network to process event sequences more effectively, particularly in scenarios with little motion or sparse signal.
+				</p>
+
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td><img src="assets/architecture.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
+					</tr>
+				</table>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>Proposed Recurrent VFM.</strong> 
+								Our DepthAnyEvent-R model processes image patches with positional encoding through multiple transformer stages that produce multi-scale feature maps $\mathbf{F}_s$. These features are combined with hidden states $\mathbf{H}_s^i$ in ConvLSTM modules $\mathcal{R}_s$ to incorporate temporal information from previous event stacks, generating enhanced feature maps $\hat{\mathbf{F}}_s$ and updated hidden states $\mathbf{H}_s^{i+1}$. A hierarchical fusion process integrates features from different scales to predict the final depth prediction $\hat{\mathbf{F}}^*$.
+							</p>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<hr>
+
+	<center>
+		<h1>Qualitative Results</h1>
+	</center>
+
+	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+		<tr>
+			<td>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td><img src="assets/qualitative1.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
+					</tr>
+				</table>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>Qualitative Results on DSEC dataset -- Zero-Shot Generalization.</strong> 
+								From left to right: event image, predictions by E2Depth, EReFormer, DepthAnyEvent and DepthAnyEvent-R, trained on EventScape only.
+							</p>
+						</td>
+					</tr>
+				</table>
+
+				<p style="text-align: justify;">
+					In zero-shot settings—without any fine-tuning on real-world data—our models generalize significantly better than prior event-based approaches. 
+					
+				</p>				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td><img src="assets/qualitative2.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
+					</tr>
+				</table>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>Qualitative Results on MVSEC -- Fine-tuned Models.</strong> 
+								From left to right: event image, predictions by E2Depth, EReFormer, DepthAnyEvent and DepthAnyEvent-R, trained on EventScape and fine-tuned on MVSEC.
+							</p>
+						</td>
+					</tr>
+				</table>
+
+				<p style="text-align: justify;">
+					After fine-tuning on MVSEC, all models show improved accuracy, yet our proposed DepthAnyEvent and DepthAnyEvent-R models still outperform existing methods
+				</p>				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td><img src="assets/qualitative3.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
+					</tr>
+				</table>
+				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+					<tr>
+						<td>
+							<p style="text-align: justify;">
+								<strong>Qualitative Results on DSEC -- Supervised vs Distilled Models.</strong> 
+								From left to right: event image, predictions by DepthAnyEvent and its distilled counterpart, and by DepthAnyEvent-R and its distilled counterpart.
+							</p>
+						</td>
+					</tr>
+				</table>
+
+				<p style="text-align: justify;">
+					The visual comparison between supervised and distilled models demonstrates that our cross-modal distillation strategy can achieve comparable—or even superior—performance without using expensive ground-truth annotations. 
+				</p>				
+			</td>
+		</tr>	
+	</table>
+
+	<br>
+	<hr>
+
+	<div class="container is-max-desktop content">
+		<center><h1 class="bibtex" style="font-size:32px; font-weight:400;">BibTeX</h1></center>
+		<pre style="background-color: #f5f5f5; color: #4a4a4a; font-size: 1.5em; overflow-x: auto;"><code>InProceedings{Bartolomei_2025_ICCV,
+	title={Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation},
+	author={Bartolomei, Luca and Mannocci, Enrico and Tosi, Fabio and Poggi, Matteo and Mattoccia, Stefano},
+	booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+	year      = {2025},
+}</code></pre>
+	</div>
+
+
+	<br>
+	<br>
+	<hr>
+</body>
+
+</html>
