@@ -399,7 +399,7 @@
 		<h3 class="title is-3 publication-title" style="margin-top: 0; margin-bottom: 0">ICCV 2025</h3>
 		<br>
 		<table align=center width="1100px">
-			<table align=center width="1000px">
+			<table align=center width="1100px">
 				<tr>
 					<td align=center width="180px">
 						<center>
@@ -499,16 +499,16 @@
 	</center>
 	<br>
 	<center>
-		<table align=center width="1000px">
+		<table align=center width="1100px">
 			<tr>
 				<td>
 					<center>
-						<img class="round" width="1000px" src="./assets/teaser.png" />
+						<img class="round" width="1100px" src="./assets/teaser.png" />
 					</center>
 				</td>
 			</tr>
 		</table>
-		<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+		<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 			<tr>
 				<td>
 					<p style="text-align: justify;">
@@ -526,7 +526,7 @@
 		<h1>Abstract</h1>
 	</center>
 
-	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+	<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 		<tr>
 			<td>
 				<p style="text-align: justify;">
@@ -546,7 +546,7 @@
 		<h1>Method</h1>
 	</center>
 
-	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+	<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 		<tr>
 			<td>
 				<h2> 1 - Problems</h2>
@@ -604,12 +604,12 @@
 					Our framework is designed to bridge the modality gap between conventional images and event streams for monocular depth estimation. As illustrated below, we propose a two-stage training strategy: (i) cross-modal distillation from RGB to events and (ii) model adaptation of Vision Foundation Models to operate directly on event data. In the first stage, we leverage a pre-trained Vision Foundation Model (VFM) to generate dense depth pseudo-labels from RGB frames. These labels supervise the training of a student network that learns to estimate depth from corresponding event stacks. This approach eliminates the need for expensive depth ground-truth annotations and enables effective supervision in the event domain.
 				</p>
 
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td><img src="assets/framework.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
 					</tr>
 				</table>
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td>
 							<p style="text-align: justify;">
@@ -620,12 +620,12 @@
 					</tr>
 				</table>
 
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td><img src="assets/proxylabels.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
 					</tr>
 				</table>
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td>
 							<p style="text-align: justify;">
@@ -640,12 +640,12 @@
 					To effectively apply image-based models to events, we encode the sparse asynchronous event stream using the <em>Tencode</em> representation. This converts the temporal and polarity information of events into a 3-channel image that resembles RGB format, making it compatible with existing pre-trained VFMs. In the second part of our pipeline, we explore two adapted architectures: a <strong>vanilla model</strong> that directly fine-tunes Depth Anything v2 on event representations, and a <strong>recurrent variant</strong>—DepthAnyEvent-R—which incorporates temporal memory through ConvLSTM blocks. This recurrent design allows the network to process event sequences more effectively, particularly in scenarios with little motion or sparse signal.
 				</p>
 
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td><img src="assets/architecture.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
 					</tr>
 				</table>
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td>
 							<p style="text-align: justify;">
@@ -667,15 +667,15 @@
 		<h1>Qualitative Results</h1>
 	</center>
 
-	<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+	<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 		<tr>
 			<td>
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td><img src="assets/qualitative1.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
 					</tr>
 				</table>
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td>
 							<p style="text-align: justify;">
@@ -694,12 +694,12 @@
 		</tr>
 		<tr>
 			<td>
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td><img src="assets/qualitative2.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
 					</tr>
 				</table>
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td>
 							<p style="text-align: justify;">
@@ -717,12 +717,12 @@
 		</tr>
 		<tr>
 			<td>
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td><img src="assets/qualitative3.png" style="margin-left: auto; margin-right: auto; display: block; width: 990px;" /></td>
 					</tr>
 				</table>
-				<table align=center width="1000px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
+				<table align=center width="1100px" style="font-family: 'Noto Sans', sans-serif; font-size: 1.1em ">
 					<tr>
 						<td>
 							<p style="text-align: justify;">
