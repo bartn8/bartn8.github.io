@@ -13,7 +13,7 @@ function updateAge() {
     // Trova e aggiorna il testo che contiene l'età
     const bioSection = document.querySelector('.summary-section p');
     if (bioSection) {
-        bioSection.innerHTML = bioSection.innerHTML.replace(/a \d+ years/, `a ${age} years`);
+        bioSection.innerHTML = bioSection.innerHTML.replace(/a \d+ years old/, `a ${age} years old`);
     }
 }
 
