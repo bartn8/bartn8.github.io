@@ -256,6 +256,47 @@ p {
 .footer .fa-heart {
   color: #fb866a;
 }
+/* Language switcher */
+.lang-switch {
+  text-align: right;
+  margin-bottom: 30px;
+  line-height: 0;
+}
+.lang-switch .lang-flag {
+  display: inline-block;
+  padding: 6px 10px;
+  margin-left: 8px;
+  border: 1px solid #d9dee4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #f5f7f9;
+  opacity: 0.55;
+  -webkit-transition: opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  -moz-transition: opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.lang-switch a.lang-flag:hover,
+.lang-switch a.lang-flag:focus {
+  opacity: 1;
+  border-color: #2d7788;
+  background: #eef7f9;
+  text-decoration: none;
+}
+.lang-switch .lang-flag.active {
+  opacity: 1;
+  border-color: #2d7788;
+  background: #eef7f9;
+  cursor: default;
+}
+.lang-switch .flag-icon {
+  width: 1.6em;
+  line-height: 1.2em;
+  vertical-align: middle;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
   .sidebar-wrapper {
